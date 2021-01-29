@@ -1,0 +1,48 @@
+{% extends 'base.html'%} {%block content%}
+<div class="text-center title">
+    <h3 id="arrival">NEW ARRIVALS</h3>
+</div>
+<div class="row justify-content-between mt-5 mx-auto">
+    {% for newArrivals in newArrivals_object %}
+    <div class="card mb-3 col-md-6">
+        <div class="row no-gutters">
+            <div class="col-6">
+                <img id="card-img" src={{newArrivals.img_url}} class="card-img" alt="...">
+            </div>
+            <div class="col-6">
+                <div class="card-body">
+                    <h5 class="card-title">{{newArrivals.title}}</h5>
+                    <p class="card-text">₹{{newArrivals.price}}</p>
+                    <p class="card-text">{{newArrivals.discription}}</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="text-center title">
+
+    <h3 id="offer">OFFERS</h3>
+</div>
+<div class="row justify-content-between mt-5 mx-auto">
+    {% for offers in offers_object %}
+    <div class="card mb-3 col-md-6">
+        <div class="row no-gutters">
+            <div class="col-6">
+                <img id="card-img" src={{offers.img_url}} class="card-img" alt="...">
+            </div>
+            <div class="col-6">
+                <div class="card-body">
+                    <h5 class="card-title">{{offers.title}}</h5>
+                    <p class="card-text">₹{{offers.price}}</p>
+                    <p class="card-text">{{offers.discription}}</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}
